@@ -6,12 +6,4 @@
 
 方案：将 users 替换为一个计算属性 (比如 activeUsers)，让其返回过滤后的列表。
 
-computed: {
-  activeUsers: function () {
-    return this.users.filter(function (user) {
-      return user.isActive
-    })
-  }
-}
-
 2.为了避免渲染本应该被隐藏的列表 (比如 v-for="user in users" v-if="shouldShowUsers")。这种情形下，可以将 v-if 移动至容器元素上，这样当不满足shouldShowUsers时，也就不会循环users。
